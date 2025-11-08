@@ -1,100 +1,100 @@
-Freshwater Fish Bass 80
-Freshwater Fish Trout 60
-Freshwater Fish Catfish 40
-Freshwater Fish Bluegill 70
-Freshwater Fish Carp 90
-Freshwater Fish Pike 50
-Freshwater Fish Perch 100
-Freshwater Fish Crappie 30
-Freshwater Fish Minnow 20
-Freshwater Fish Sunfish 60
-Freshwater Invertebrate Snail 40
-Freshwater Invertebrate Crayfish 70
-Freshwater Invertebrate Mussel 80
-Freshwater Invertebrate Worm 50
-Freshwater Invertebrate DragonflyLarva 30
-Freshwater Invertebrate WaterFlea 60
-Freshwater Invertebrate MayflyNymph 40
-Freshwater Invertebrate Hydra 20
-Freshwater Invertebrate Leech 50
-Freshwater Invertebrate Tubifex 90
-Freshwater Plant Lily 80
-Freshwater Plant Duckweed 60
-Freshwater Plant Algae 40
-Freshwater Plant Pondweed 70
-Freshwater Plant Elodea 50
-Freshwater Plant WaterHyacinth 30
-Freshwater Plant Hornwort 90
-Freshwater Plant Cabomba 20
-Freshwater Plant Vallisneria 60
-Freshwater Plant Milfoil 40
-Freshwater Fish Sturgeon 80
-Freshwater Invertebrate WaterBeetle 60
-Freshwater Plant WaterLettuce 40
-Saltwater Fish Anchovy 50
-Saltwater Fish Parrotfish 70
-Saltwater Invertebrate SeaCucumber 40
-Saltwater Plant SeaPalm 90
-Saltwater Fish Clownfish 60
-Saltwater Fish Snapper 100
-Saltwater Fish Grouper 80
-Saltwater Fish Tuna 40
-Saltwater Fish Mackerel 70
-Saltwater Fish Sardine 50
-Saltwater Fish Barracuda 90
-Saltwater Fish Flounder 30
-Saltwater Fish Halibut 20
-Saltwater Fish Cod 60
-Saltwater Invertebrate Crab 80
-Saltwater Invertebrate Lobster 50
-Saltwater Invertebrate Shrimp 70
-Saltwater Invertebrate Octopus 40
-Saltwater Invertebrate Squid 60
-Saltwater Invertebrate Jellyfish 30
-Saltwater Invertebrate SeaUrchin 90
-Saltwater Invertebrate CoralPolyp 20
-Saltwater Invertebrate Starfish 50
-Saltwater Invertebrate Sponge 100
-Saltwater Plant Kelp 70
-Saltwater Plant Seaweed 60
-Saltwater Plant Algae 80
-Saltwater Plant Seagrass 40
-Saltwater Plant RedCoralline 90
-Saltwater Plant Sargassum 30
-Saltwater Plant Eelgrass 50
-Saltwater Plant MarineMoss 20
-Saltwater Plant Caulerpa 100
-Saltwater Plant SeaLettuce 60
-Brackish Fish Mullet 40
-Brackish Fish Tarpon 80
-Brackish Fish Goby 50
-Brackish Fish Killifish 70
-Brackish Fish Halfbeak 80
-Brackish Invertebrate MudCrab 60
-Brackish Plant SeaAster 50
-Brackish Fish Barramundi 60
-Brackish Fish Archerfish 90
-Brackish Fish Mudskipper 30
-Brackish Fish Tilapia 20
-Brackish Fish Molly 100
-Brackish Fish Guppy 40
-Brackish Invertebrate Prawn 80
-Brackish Invertebrate Clam 60
-Brackish Invertebrate Oyster 70
-Brackish Invertebrate Barnacle 90
-Brackish Invertebrate Anemone 50
-Brackish Invertebrate Sandworm 40
-Brackish Invertebrate BrineShrimp 30
-Brackish Invertebrate GhostShrimp 100
-Brackish Invertebrate SeaSlug 20
-Brackish Invertebrate HermitCrab 60
-Brackish Plant Mangrove 80
-Brackish Plant SeaLavender 40
-Brackish Plant Algae 50
-Brackish Plant WaterFern 60
-Brackish Plant Saltwort 90
-Brackish Plant Glasswort 70
-Brackish Plant Cordgrass 30
-Brackish Plant Arrowgrass 20
-Brackish Plant SeaPurslane 100
-Brackish Plant Samphire 50
+Freshwater Bass 80
+Freshwater Trout 60
+Freshwater Catfish 40
+Freshwater Bluegill 70
+Freshwater Carp 90
+Freshwater Pike 50
+Freshwater Perch 100
+Freshwater Crappie 30
+Freshwater Minnow 20
+Freshwater Sunfish 60
+Freshwater Snail 40
+Freshwater Crayfish 70
+Freshwater Mussel 80
+Freshwater Worm 50
+Freshwater DragonflyLarva 30
+Freshwater WaterFlea 60
+Freshwater MayflyNymph 40
+Freshwater Hydra 20
+Freshwater Leech 50
+Freshwater Tubifex 90
+Freshwater Lily 80
+Freshwater Duckweed 60
+Freshwater Algae 40
+Freshwater Pondweed 70
+Freshwater Elodea 50
+Freshwater WaterHyacinth 30
+Freshwater Hornwort 90
+Freshwater Cabomba 20
+Freshwater Vallisneria 60
+Freshwater Milfoil 40
+Freshwater Sturgeon 80
+Freshwater WaterBeetle 60
+Freshwater WaterLettuce 40
+Saltwater Anchovy 50
+Saltwater Parrotfish 70
+Saltwater SeaCucumber 40
+Saltwater SeaPalm 90
+Saltwater Clownfish 60
+Saltwater Snapper 100
+Saltwater Grouper 80
+Saltwater Tuna 40
+Saltwater Mackerel 70
+Saltwater Sardine 50
+Saltwater Barracuda 90
+Saltwater Flounder 30
+Saltwater Halibut 20
+Saltwater Cod 60
+Saltwater Crab 80
+Saltwater Lobster 50
+Saltwater Shrimp 70
+Saltwater Octopus 40
+Saltwater Squid 60
+Saltwater Jellyfish 30
+Saltwater SeaUrchin 90
+Saltwater CoralPolyp 20
+Saltwater Starfish 50
+Saltwater Sponge 100
+Saltwater Kelp 70
+Saltwater Seaweed 60
+Saltwater Algae 80
+Saltwater Seagrass 40
+Saltwater RedCoralline 90
+Saltwater Sargassum 30
+Saltwater Eelgrass 50
+Saltwater MarineMoss 20
+Saltwater Caulerpa 100
+Saltwater SeaLettuce 60
+Brackish Mullet 40
+Brackish Tarpon 80
+Brackish Goby 50
+Brackish Killifish 70
+Brackish Halfbeak 80
+Brackish MudCrab 60
+Brackish SeaAster 50
+Brackish Barramundi 60
+Brackish Archerfish 90
+Brackish Mudskipper 30
+Brackish Tilapia 20
+Brackish Molly 100
+Brackish Guppy 40
+Brackish Prawn 80
+Brackish Clam 60
+Brackish Oyster 70
+Brackish Barnacle 90
+Brackish Anemone 50
+Brackish Sandworm 40
+Brackish BrineShrimp 30
+Brackish GhostShrimp 100
+Brackish SeaSlug 20
+Brackish HermitCrab 60
+Brackish Mangrove 80
+Brackish SeaLavender 40
+Brackish Algae 50
+Brackish WaterFern 60
+Brackish Saltwort 90
+Brackish Glasswort 70
+Brackish Cordgrass 30
+Brackish Arrowgrass 20
+Brackish SeaPurslane 100
+Brackish Samphire 50

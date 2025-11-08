@@ -17,7 +17,7 @@ using namespace std;
 const int INIT_SIZE = 9;
 
 struct Species {
-    string zone, name, category;
+    string zone, name;
     int population;
 };
 
@@ -25,7 +25,7 @@ void simulation();
 
 int main() {
     srand(time(0));
-    map<string,pair<string,int>> aquatic_zone;
+    map<string,list<pair<string,int>>> aquatic_zone;
     vector <Species> speciesData;
     Species temp;
     fstream input_file("data.txt");
@@ -33,15 +33,24 @@ int main() {
         cout << "data.txt was unable to be opened" << endl;
         return 1;
     }
-    while (input_file >> temp.zone >> temp.category >> temp.name >> temp.population) {
+    while (input_file >> temp.zone >> temp.name >> temp.population) {
         speciesData.push_back(temp);
     }
     input_file.close();
     
     for (int i = 0; i < INIT_SIZE; i++) {
-        int randIndex = rand() % 100;
-        
+        int randIndex = rand() % speciesData.size();
+        Species s = speciesData[randIndex];
+        aquatic_zone[s.zone].push_back({s.name, s.population});
     }
+    
+    for (auto &val : aquatic_zone) {
+        cout << val.first << ":\n";
+        for (auto &val2 : val.second) {
+            cout << val2.first << " " << val2.second << endl;
+        }
+    }
+    
     
     return 0;
 }
