@@ -1,0 +1,11 @@
+Project Overview:
+
+ My project creates an aquatic ecosystem simulation, designed to predict the possible future changes across 25 years. This software will illustrate the potential impact of environmental alterations on the natural balance of ecosystems through changing fish, invertebrate, and plant life populations and possible natural disasters.
+
+Implementation:
+
+I plan to use a std::map to store and manage data related to salt water, freshwater, and hybrid(brackish water) ecosystems. This map will categorize living organisms into three std::lists representing fish, invertebrates, and plants with population of that species as a pair. The map will have the water type name as its key. The map's value will be an array of these three lists.
+
+Simulated events:
+
+The simulation will focus on three events across a 25 year period: Natural disaster such as an Earthquake/Tsunamis could disrupt ecosystems; increased in water levels caused by polars caps melting or increased rain water ; and unpredicted extreme polution which would cause destruction throughout the ecosystem. Certain events could cause good or bad results as a result. I.E: Earthquake for fresh water could cause a river blockade which leaves ecosystem with less resources = overall population dying. Earthquake for fresh water could also create a bigger stream and more access to resources = raising overall population.
