@@ -24,7 +24,7 @@ struct Species {
 //function simulation iterates through 25 years of time simulating through possible changes in the three aquatic zones
 // arguments: map of aquatic zones, number of intervals
 //return : none
-void simulation(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS);
+void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species> speciesData, int INTRVLS);
 
 //function adv_simulation simulates the results of advanced events like natural distasters, higher water levels, and pollution
 // arguments: map of aquatic zones, number of intervals
@@ -65,12 +65,20 @@ int main() {
 }
 
 
-void simulation(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS){
+void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species> speciesData, int INTRVLS){
     for (int i = 0; i < INTRVLS; i++) {
         for (auto &zone: aquatic_zone) {
             cout << zone.first << ":\n";
-            for (auto) {
-                <#statements#>
+            int species = rand() % 3;
+            int event = rand() % 10;
+            if (species == 1) {
+                int randIndex = rand() % speciesData.size();
+                Species s = speciesData[randIndex];
+                zone.second.push_back({s.name, s.population});
+                cout << "Added Species: " << s.name << ", Population: " << s.population << "\n" << endl;
+            } else if (species == 2){
+                int randIndex = rand() % zone.second.size();
+                
             }
         }
     }
@@ -79,17 +87,6 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS){
 void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS){
     
 }
-// Define a function to simulate environmental changes over time
-// Parameters: map of aquatic zones, number of intervals
-// Define main function
-// Initialize a map to store aquatic zone information, each associated with an array of lists of pairs for fish, invertebrates, and plants and their populations
-// Open an external file to read initial data about aquatic zones and populate the map
-// If file does not open, print an error and exit
-// Read data from file and populate map
-// For each aquatic zone randomly extract n number of species data as pair<string,int>
-// Insert species into the appropriate list in the array for their climate zone
-
-// Close the file
 
 // Begin a time-based simulation for environmental changes
 // For 25 time intervals
