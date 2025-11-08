@@ -29,7 +29,7 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species>
 //function adv_simulation simulates the results of advanced events like natural distasters, higher water levels, and pollution
 // arguments: map of aquatic zones, number of intervals
 //return : none
-void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS);
+void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone);
 
 int main() {
     srand(time(0));
@@ -52,15 +52,16 @@ int main() {
         aquatic_zone[s.zone].push_back({s.name, s.population});
     }
     
+    simulation(aquatic_zone, speciesData, INTRVLS);
+    
+    cout << "\nDisplay" << endl;
     for (auto &val : aquatic_zone) {
-        cout << val.first << ":\n";
+        cout << "\n" << val.first << ":\n";
         for (auto &val2 : val.second) {
             cout << val2.first << " " << val2.second << endl;
         }
+        cout << endl;
     }
-    
-    //simulation(aquatic_zone,INTRVLS);
-    
     return 0;
 }
 
@@ -70,14 +71,15 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species>
         for (auto &zone: aquatic_zone) {
             cout << zone.first << ":\n";
             if (!zone.second.empty()) {
-                int species = rand() % 3; // = 0 nothing, 1 = add, 2 = remove
-                int event = rand() % 10;
-                if (species == 1) {
+                int species = rand() % 100 + 1; // 1-50 nothing, 52 - 75 = add, 76-95  = remove, 96-100 = adv event
+                if (species <= 50) {
+                    //nothing happens
+                } else if (species <= 75) {
                     int randIndex = rand() % speciesData.size();
                     Species s = speciesData[randIndex];
                     zone.second.push_back({s.name, s.population});
                     cout << "Added Species: " << s.name << ", Population: " << s.population << "\n" << endl;
-                } else if (species == 2){
+                } else if (species <= 95){
                     int randIndex = rand() % zone.second.size();
                     auto it = zone.second.begin();
                     for (int i = 0; i < randIndex; i++) {
@@ -85,6 +87,8 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species>
                     }
                     cout << "Removed: " << it->first << endl;
                     zone.second.erase(it);
+                } else {
+                    // nothing for now adv_simulations(aquatic_zone);
                 }
             } else {
                 int randIndex = rand() % speciesData.size();
@@ -96,7 +100,7 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species>
     }
 }
 
-void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS){
+void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone){
     
 }
 
