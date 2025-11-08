@@ -1,0 +1,44 @@
+The purpose of this unit test is to test the adv_simulation function on its own. It simulates advanced events (Earthquakes, increased water levels, and pollution) and the affect
+it has on the population within that zone.
+The goal of this test is to ensure functionality meaning it prints the correct ouputs depending on the random number generated.
+
+Tester Code:
+#include <iostream>
+#include <map>
+#include <list>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone);
+
+int main(){
+    srand(time(0));
+    map<string,list<pair<string,int>>> aquatic_zone;
+    
+    //simulation 10 runs of calling adv_simulations
+    for (int i = 0; i < 10 ; i++) {
+        cout << "Run " << i + 1 << ":\n";
+        adv_simulations(aquatic_zone);
+    }
+}
+
+void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone){
+    int randevent = rand() % 3;
+    cout << "Random number generated: " <<randevent << " (0 = Earthquake, 1 = increased water levels, 2 = Extreme Pollution)" << endl;
+    if (randevent == 0) {
+        cout << "An Earthquake has happned!!!" << endl;
+        int chance = rand() % 2; //simulate for good or bad earthquake
+        if (chance == 1) {
+            cout << "All species population decreasese" << endl;
+        } else {
+            cout << "All species population increases due to greater resources" << endl;
+        }
+    } else if (randevent == 1){
+        cout << "Water levels have risen!!!" << endl;
+        cout << "All species population increased" << endl;
+    } else {
+        cout << "The water zone has faced extreme pollution" << endl;
+        cout << "All species population have decreased drastically" << endl;
+    }
+}
