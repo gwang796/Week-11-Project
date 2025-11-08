@@ -14,6 +14,7 @@
 #include <iomanip>
 using namespace std;
 
+const int INIT_SIZE = 9;
 
 struct Species {
     string zone, name, category;
@@ -36,6 +37,12 @@ int main() {
         speciesData.push_back(temp);
     }
     input_file.close();
+    
+    for (int i = 0; i < INIT_SIZE; i++) {
+        int randIndex = rand() % 100;
+        
+    }
+    
     return 0;
 }
 
