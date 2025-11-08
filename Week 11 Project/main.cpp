@@ -14,14 +14,22 @@
 #include <iomanip>
 using namespace std;
 
-const int INIT_SIZE = 9;
+const int INIT_SIZE = 9, INTRVLS = 25;
 
 struct Species {
     string zone, name;
     int population;
 };
 
-void simulation();
+//function simulation iterates through 25 years of time simulating through possible changes in the three aquatic zones
+// arguments: map of aquatic zones, number of intervals
+//return : none
+void simulation(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS);
+
+//function adv_simulation simulates the results of advanced events like natural distasters, higher water levels, and pollution
+// arguments: map of aquatic zones, number of intervals
+//return : none
+void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS);
 
 int main() {
     srand(time(0));
@@ -51,10 +59,26 @@ int main() {
         }
     }
     
+    //simulation(aquatic_zone,INTRVLS);
     
     return 0;
 }
 
+
+void simulation(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS){
+    for (int i = 0; i < INTRVLS; i++) {
+        for (auto &zone: aquatic_zone) {
+            cout << zone.first << ":\n";
+            for (auto) {
+                <#statements#>
+            }
+        }
+    }
+}
+
+void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone, int INTRVLS){
+    
+}
 // Define a function to simulate environmental changes over time
 // Parameters: map of aquatic zones, number of intervals
 // Define main function
