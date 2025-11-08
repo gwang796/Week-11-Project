@@ -69,16 +69,28 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species>
     for (int i = 0; i < INTRVLS; i++) {
         for (auto &zone: aquatic_zone) {
             cout << zone.first << ":\n";
-            int species = rand() % 3;
-            int event = rand() % 10;
-            if (species == 1) {
+            if (!zone.second.empty()) {
+                int species = rand() % 3; // = 0 nothing, 1 = add, 2 = remove
+                int event = rand() % 10;
+                if (species == 1) {
+                    int randIndex = rand() % speciesData.size();
+                    Species s = speciesData[randIndex];
+                    zone.second.push_back({s.name, s.population});
+                    cout << "Added Species: " << s.name << ", Population: " << s.population << "\n" << endl;
+                } else if (species == 2){
+                    int randIndex = rand() % zone.second.size();
+                    auto it = zone.second.begin();
+                    for (int i = 0; i < randIndex; i++) {
+                        ++it;
+                    }
+                    cout << "Removed: " << it->first << endl;
+                    zone.second.erase(it);
+                }
+            } else {
                 int randIndex = rand() % speciesData.size();
                 Species s = speciesData[randIndex];
                 zone.second.push_back({s.name, s.population});
                 cout << "Added Species: " << s.name << ", Population: " << s.population << "\n" << endl;
-            } else if (species == 2){
-                int randIndex = rand() % zone.second.size();
-                
             }
         }
     }
