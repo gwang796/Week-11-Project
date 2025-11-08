@@ -12,6 +12,8 @@
 #include <cstdlib>
 #include <fstream>
 #include <iomanip>
+#include <thread>
+#include <chrono>
 using namespace std;
 
 const int INIT_SIZE = 9, INTRVLS = 25;
@@ -88,7 +90,7 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species>
                     cout << "Removed: " << it->first << endl;
                     zone.second.erase(it);
                 } else {
-                    // nothing for now adv_simulations(aquatic_zone);
+                   adv_simulations(aquatic_zone);
                 }
             } else {
                 int randIndex = rand() % speciesData.size();
@@ -96,25 +98,26 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species>
                 zone.second.push_back({s.name, s.population});
                 cout << "Added Species: " << s.name << ", Population: " << s.population << "\n" << endl;
             }
+            this_thread::sleep_for(chrono::seconds(1));
         }
     }
 }
 
 void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone){
-    
+    int randevent = rand() % 3;
+    if (randevent == 0) {
+        cout << "An Earthquake has happned!!!" << endl;
+        int chance = rand() % 1; //simulate for good or bad earthquake
+        if (chance == 1) {
+            cout << "All species population decreasese" << endl;
+        } else {
+            cout << "All species population increases due to greater resources" << endl;
+        }
+    } else if (randevent == 1){
+        cout << "Water levels have risen!!!" << endl;
+        cout << "All species population increased" << endl;
+    } else {
+        cout << "The water zone has faced extreme pollution" << endl;
+        cout << "All species population have decreased drastically" << endl;
+    }
 }
-
-// Begin a time-based simulation for environmental changes
-// For 25 time intervals
-// Iterate through each aquatic zone in the map
-// For each zone, simulate changes
-// Randomly decide if a species is to be added or removed from each category (fish, invertebrate, plant)
-// If adding, generate or select a new species name to add to the list
-// If removing, select a random species from the list to remove
-// Print the changes for this interval, e.g., "Added {species} to {category} in {climate zone}"
-
-// simulate for a possible random events impacting the environment natural disaster, increased water levels, extreme population
-// within those events simulate possible results
-
-// Wait or pause briefly to simulate the passage of time between intervals
-// End of main function
