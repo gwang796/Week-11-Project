@@ -1,0 +1,30 @@
+Bug 1) How to not open the data.txt file every time I had to add a species, and how to store the data
+Fix: Create a struct called Species and push Species objects into a vector read from the data file
+
+Bug 2) data.txt was not able to open
+Fix: Change Scheme of Xcode to be custom -> week 11 project folder
+
+Bug 3) Having an extra data type 'category' in Struct that was not needed
+Fix: Remove 'category' data type from Struct, and remove 'category' data from data.txt so Species only has zone,name,population
+
+Bug 4) syntax error from int value called rand = rand() % 100
+Fix: changed int value name to randIndex because rand name makes system think I'm calling rand() function
+
+Bug 5)If logic error within simulation function to have what event occur because of having species < 50 && species < 76
+Fix: just make it species <= 50, species <=85, species <=95, species <=100
+
+
+Bug 6)Logic error for removing species, auto it = zone.second.begin() but I never moved the it iterator
+Fix: make a simple for loop that iterates until randIndex value having ++it every iteration then finally erase at it
+
+Bug 7) functions were not working properly, not making changes to aquatic_zone map
+Fix: Add &aquatic_zone to function parameters
+
+Bug 8) Syntax error within logic of adv_simulation with curly brackets of the if statements under Earthquake Simulation
+Fix: if statement inside of if (randevent == 0) I pasted a third } for the else part of the if statement
+
+Bug 9) Incorrect printing error for adv_simulation, where under an aquatic zone it would print the error for all three water zones
+Fix: add string name as parameter to adv_simulation and use 'name' to print instead of 'zone.first'
+
+Bug 10)Within adv_simulation function I ran into a logic error of possibility of the population size of species shrinking down to nothing or rising to overpopulation.
+Fix: Using min and max function to regulate a minimum population size of maximum population size
