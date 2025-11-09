@@ -26,12 +26,12 @@ struct Species {
 //function simulation iterates through 25 years of time simulating through possible changes in the three aquatic zones
 // arguments: map of aquatic zones, number of intervals
 //return : none
-void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species> speciesData, int INTRVLS);
+void simulation(map<string,list<pair<string,int>>> &aquatic_zone, vector<Species> speciesData, int INTRVLS);
 
 //function adv_simulation simulates the results of advanced events like natural distasters, higher water levels, and pollution
 // arguments: map of aquatic zones, number of intervals
 //return : none
-void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone);
+void adv_simulations(string name,map<string,list<pair<string,int>>> &aquatic_zone);
 
 int main() {
     srand(time(0));
@@ -59,7 +59,6 @@ int main() {
         for (auto &val2 : val.second) {
             cout << val2.first << " " << val2.second << endl;
         }
-        cout << endl;
     }
     
     simulation(aquatic_zone, speciesData, INTRVLS);
@@ -70,21 +69,20 @@ int main() {
         for (auto &val2 : val.second) {
             cout << val2.first << " " << val2.second << endl;
         }
-        cout << endl;
     }
     return 0;
 }
 
-void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species> speciesData, int INTRVLS){
+void simulation(map<string,list<pair<string,int>>> &aquatic_zone, vector<Species> speciesData, int INTRVLS){
     for (int i = 0; i < INTRVLS; i++) {
         cout << "\n----YEAR---- " << i + 1 << endl;
         for (auto &zone: aquatic_zone) {
             cout << zone.first << ":\n";
             if (!zone.second.empty()) {
-                int species = rand() % 100 + 1; // 1-50 nothing, 52 - 75 = add, 76-95  = remove, 96-100 = adv event
+                int species = rand() % 100 + 1; // 1-50 nothing, 52 - 85 = add, 86-95  = remove, 96-100 = adv event
                 if (species <= 50) {
                     //nothing happens
-                } else if (species <= 75) {
+                } else if (species <= 85) {
                     int randIndex = rand() % speciesData.size();
                     Species s = speciesData[randIndex];
                     zone.second.push_back({s.name, s.population});
@@ -98,7 +96,8 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species>
                     cout << "Removed: " << it->first << endl;
                     zone.second.erase(it);
                 } else {
-                   adv_simulations(aquatic_zone);
+                    string name = zone.first;
+                   adv_simulations(name,aquatic_zone);
                 }
             } else {
                 int randIndex = rand() % speciesData.size();
@@ -111,10 +110,10 @@ void simulation(map<string,list<pair<string,int>>> aquatic_zone, vector<Species>
     }
 }
 
-void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone){
+void adv_simulations(string name,map<string,list<pair<string,int>>> &aquatic_zone){
     int randevent = rand() % 3;
     if (randevent == 0) {
-        cout << "An Earthquake has happned!!!" << endl;
+        cout << "An Earthquake has happned in " << name << "!!!" << endl;
         int chance = rand() % 2; //simulate for good or bad earthquake
         if (chance == 1) {
             cout << "All species population decreasese due to habitat loss" << endl;
@@ -132,7 +131,7 @@ void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone){
             }
         }
     } else if (randevent == 1){
-        cout << "Water levels have risen!!!" << endl;
+        cout << name << " water levels have risen!!!" << endl;
         cout << "All species population increased" << endl;
         for (auto &zone : aquatic_zone){
             for (auto &species: zone.second) {
@@ -140,9 +139,9 @@ void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone){
             }
         }
     } else {
+        cout << "The "<< name << " zone has faced extreme pollution" << endl;
+        cout << "All species population have decreased drastically" << endl;
         for (auto &zone : aquatic_zone){
-            cout << "The "<< zone.first << " zone has faced extreme pollution" << endl;
-            cout << "All species population have decreased drastically" << endl;
             for (auto &species: zone.second) {
                 species.second = species.second / 2;
             }
