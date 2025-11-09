@@ -1,10 +1,12 @@
-Bug 1)
-Bug 2)
-Bug 3)
-Bug 4)
-Bug 5)
-Bug 6)
-Bug 7)
-Bug 8)
-Bug 9)
-Bug 10)
+Bug 1) How to not open the data.txt file every time I had to add a species
+Fix: 
+Bug 2:
+Bug 3:
+Bug 4:
+Bug 5:
+Bug 6:
+Bug 7:
+Bug 8:
+Bug 9:
+Bug 10)Within adv_simulation function I ran into a logic error of possibility of the population size of species shrinking down to nothing or rising to overpopulation.
+Fix: Using min and max function to regulate a minimum population size of maximum population size

@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <thread>
 #include <chrono>
+#include <algorithm>
 using namespace std;
 
 const int INIT_SIZE = 15, INTRVLS = 25;
@@ -53,7 +54,7 @@ int main() {
         Species s = speciesData[randIndex];
         aquatic_zone[s.zone].push_back({s.name, s.population});
     }
-    cout << "\n-----Start of Simulation-----" << endl;
+    cout << "-----Start of Simulation-----" << endl;
     for (auto &val : aquatic_zone) {
         cout << "\n" << val.first << ":\n";
         for (auto &val2 : val.second) {
@@ -65,7 +66,7 @@ int main() {
     
     cout << "\n-----Post Simulation Results-----" << endl;
     for (auto &val : aquatic_zone) {
-        cout << val.first << ":\n";
+        cout << "\n" << val.first << ":\n";
         for (auto &val2 : val.second) {
             cout << val2.first << " " << val2.second << endl;
         }
@@ -105,7 +106,7 @@ void simulation(map<string,list<pair<string,int>>> &aquatic_zone, vector<Species
                 zone.second.push_back({s.name, s.population});
                 cout << "Added Species: " << s.name << ", Population: " << s.population << endl;
             }
-            this_thread::sleep_for(chrono::seconds(1));
+            //this_thread::sleep_for(chrono::seconds(1));
         }
     }
 }
@@ -113,20 +114,20 @@ void simulation(map<string,list<pair<string,int>>> &aquatic_zone, vector<Species
 void adv_simulations(string name,map<string,list<pair<string,int>>> &aquatic_zone){
     int randevent = rand() % 3;
     if (randevent == 0) {
-        cout << "An Earthquake has happned in " << name << "!!!" << endl;
+        cout << "An Earthquake has happned in " << name << " zone !!!" << endl;
         int chance = rand() % 2; //simulate for good or bad earthquake
         if (chance == 1) {
-            cout << "All species population decreasese due to habitat loss" << endl;
+            cout << "All species population decreasesed due to habitat loss" << endl;
             for (auto &zone : aquatic_zone){
                 for (auto &species: zone.second) {
-                    species.second = species.second / 2;
+                    species.second = max(10,species.second/2);
                 }
             }
         } else {
             cout << "All species population increases due to greater resources" << endl;
             for (auto &zone : aquatic_zone){
                 for (auto &species: zone.second) {
-                    species.second = species.second * 1.5;
+                    species.second = min(200,species.second * 2);
                 }
             }
         }
@@ -135,7 +136,7 @@ void adv_simulations(string name,map<string,list<pair<string,int>>> &aquatic_zon
         cout << "All species population increased" << endl;
         for (auto &zone : aquatic_zone){
             for (auto &species: zone.second) {
-                species.second = species.second * 1.5;
+                species.second = min(200,species.second * 2);
             }
         }
     } else {
@@ -143,7 +144,7 @@ void adv_simulations(string name,map<string,list<pair<string,int>>> &aquatic_zon
         cout << "All species population have decreased drastically" << endl;
         for (auto &zone : aquatic_zone){
             for (auto &species: zone.second) {
-                species.second = species.second / 2;
+                species.second = max(10,species.second/2);
             }
         }
     }
