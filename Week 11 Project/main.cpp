@@ -109,9 +109,19 @@ void adv_simulations(map<string,list<pair<string,int>>> aquatic_zone){
         cout << "An Earthquake has happned!!!" << endl;
         int chance = rand() % 2; //simulate for good or bad earthquake
         if (chance == 1) {
-            cout << "All species population decreasese" << endl;
+            cout << "All species population decreasese due to habitat loss" << endl;
+            for (auto &zone : aquatic_zone){
+                for (auto &species: zone.second) {
+                    species.second = species.second / 2;
+                }
+            }
         } else {
             cout << "All species population increases due to greater resources" << endl;
+            for (auto &zone : aquatic_zone){
+                for (auto &species: zone.second) {
+                    species.second = species.second * 1.5;
+                }
+            }
         }
     } else if (randevent == 1){
         cout << "Water levels have risen!!!" << endl;
