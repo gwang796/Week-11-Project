@@ -1,12 +1,18 @@
-Bug 1) How to not open the data.txt file every time I had to add a species
-Fix: 
-Bug 2:
-Bug 3:
-Bug 4:
-Bug 5:
-Bug 6:
-Bug 7:
-Bug 8:
-Bug 9:
+Bug 1) How to not open the data.txt file every time I had to add a species, and how to store the data
+Fix: Create a struct called Species and push Species objects into a vector read from the data file
+
+Bug 2)
+Bug 3)
+Bug 4)
+Bug 5)
+Bug 6)
+Bug 7) Forgetting to add & sign to map parameter, in order to make actual changes to map aquatic_zone
+
+Bug 8) Syntax error within logic of adv_simulation with curly brackets of the if statements under Earthquake Simulation
+Fix: if statement inside of if (randevent == 0) I pasted a third } for the else part of the if statement
+
+Bug 9) Incorrect printing error for adv_simulation, where under an aquatic zone it would print the error for all three water zones
+Fix: add string name as parameter to adv_simulation and use 'name' to print instead of 'zone.first'
+
 Bug 10)Within adv_simulation function I ran into a logic error of possibility of the population size of species shrinking down to nothing or rising to overpopulation.
 Fix: Using min and max function to regulate a minimum population size of maximum population size

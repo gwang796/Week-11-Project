@@ -25,12 +25,12 @@ struct Species {
 };
 
 //function simulation iterates through 25 years of time simulating through possible changes in the three aquatic zones
-// arguments: map of aquatic zones, number of intervals
+// arguments: map of aquatic zones, number of intervals, vector of Species objects
 //return : none
 void simulation(map<string,list<pair<string,int>>> &aquatic_zone, vector<Species> speciesData, int INTRVLS);
 
 //function adv_simulation simulates the results of advanced events like natural distasters, higher water levels, and pollution
-// arguments: map of aquatic zones, number of intervals
+// arguments: map of aquatic zones, number of intervals, string name
 //return : none
 void adv_simulations(string name,map<string,list<pair<string,int>>> &aquatic_zone);
 
@@ -57,8 +57,8 @@ int main() {
     cout << "-----Start of Simulation-----" << endl;
     for (auto &val : aquatic_zone) {
         cout << "\n" << val.first << ":\n";
-        for (auto &val2 : val.second) {
-            cout << val2.first << " " << val2.second << endl;
+        for (auto &val1 : val.second) {
+            cout << val1.first << " " << val1.second << endl;
         }
     }
     
@@ -67,8 +67,8 @@ int main() {
     cout << "\n-----Post Simulation Results-----" << endl;
     for (auto &val : aquatic_zone) {
         cout << "\n" << val.first << ":\n";
-        for (auto &val2 : val.second) {
-            cout << val2.first << " " << val2.second << endl;
+        for (auto &val1 : val.second) {
+            cout << val1.first << " " << val1.second << endl;
         }
     }
     return 0;
